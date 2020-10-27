@@ -5,6 +5,7 @@ import pyAesCrypt
 
 bufferSize = 64 * 1024
 password = "hello"
+teststring="testing send process";
 # decrypt
 pyAesCrypt.decryptFile("./weights/encoder_weights.txt.aes","./weights/encoder_weights.h5", password, bufferSize)
 encoder = load_model(r'./weights/encoder_weights.h5')
@@ -13,7 +14,7 @@ encoder = load_model(r'./weights/encoder_weights.h5')
 
 
 inputs = np.array([[1,2,2,3,1]])
-
+inputs2=np.array([[1,2,2,3,1]]) 
 x = encoder.predict(inputs)
 np.save('encodedValues',x)
 #pyAesCrypt.encryptFile("encodedValues.txt","encodedValues.txt,aes", password, bufferSize)
