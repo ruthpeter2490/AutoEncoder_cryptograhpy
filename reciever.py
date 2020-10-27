@@ -10,6 +10,7 @@ decoder = load_model(r'./weights/decoder_weights.h5')
 
 inputs = np.array(np.load('encodedValues.npy'))
 y = decoder.predict(inputs)
-
+test="testing reciever";
+print(test);
 print('Decoded: {}'.format(y))
 print(np.round(y))
